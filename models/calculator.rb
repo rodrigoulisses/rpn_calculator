@@ -6,8 +6,8 @@ class Calculator
     @input = input.new(self)
   end
 
-  def perform
-    @input.perform
+  def perform(input_line)
+    @input.perform input_line
   end
   
   def push(value)

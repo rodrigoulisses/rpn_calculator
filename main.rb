@@ -3,4 +3,6 @@ require_relative 'models/input_io'
 
 calculator = Calculator.new
 
-calculator.perform
+ARGF.each_line do |line|
+  calculator.perform line
+end

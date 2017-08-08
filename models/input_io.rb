@@ -3,11 +3,11 @@ class InputIO
     @calculator = calculator
   end
 
-  def perform
-    ARGF.each_line do |line|
-      line.split(" ").map { |line| menu(line.chomp) }
-    end
+  def perform(input)
+    input.split(" ").map { |input| menu(input.chomp) }
   end
+
+  private
 
   def menu(option)
     case option
