@@ -5,18 +5,18 @@ class InputIO
 
   def perform
     ARGF.each_line do |line|
-      menu line
+      line.split(" ").map { |line| menu(line.chomp) }
     end
   end
 
   def menu(option)
-    case option.chomp!
+    case option
     when "+", "-", "*", "/"
-      puts @calculator.calculate(option)
+      @calculator.calculate(option)
     when "q"
       exit 0
     else
-      puts @calculator.push(option)
+      @calculator.push(option)
     end
   end
 end

@@ -20,7 +20,7 @@ RSpec.describe InputIO do
     end
 
     context 'when options is an operator' do
-      let(:option) { "+\n" }
+      let(:option) { "+" }
 
       it 'calculator receives calculate with option as param' do
         expect(calculator).to receive(:calculate).with(option)
@@ -28,7 +28,7 @@ RSpec.describe InputIO do
     end
 
     context 'when option is q' do
-      let(:option) { "q\n" }
+      let(:option) { "q" }
 
       it 'exit to calculate' do
         expect(Kernel).to receive(:exit).with(0)
