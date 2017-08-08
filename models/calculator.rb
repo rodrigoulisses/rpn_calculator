@@ -1,8 +1,8 @@
 class Calculator
-  attr_accessor :inputs, :input
+  attr_accessor :numbers, :input
 
   def initialize(input: InputIO)
-    @inputs = []
+    @numbers = []
     @input = input.new(self)
   end
 
@@ -12,28 +12,27 @@ class Calculator
   
   def push(value)
     begin
-      @inputs << Float(value)
-
-      value
+      @numbers << Float(value)
     rescue
-      "It is not a number. Please fill in with a number"
+      puts "It is not a number. Please fill in with a number"
     end
   end
 
   def calculate(operator)
     begin
-      second_value = @inputs.pop
-      first_value = @inputs.pop
+      second_value = @numbers.pop
+      first_value = @numbers.pop
 
       raise ZeroDivisionError if second_value.zero? && operator.eql?('/')
       result = first_value.public_send("#{operator}".to_sym, second_value)
       push result
+      puts result
     rescue NoMethodError
-      @inputs.push second_value
-      "Please fill in with a number"
+      @numbers.push second_value
+      puts "Please fill in with a number"
     rescue ZeroDivisionError
-      @inputs.push first_value
-      "Divided by 0"
+      @numbers.push first_value
+      puts "Divided by 0"
     end
   end
 end
