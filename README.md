@@ -1,11 +1,11 @@
 # CLI RPN Calculator
 It is a implementation of command-line reverse polish notation calculator using Ruby language.
 
-Created a Calculator model to save numbers that was typed on console and calculate an operation when a operator is typed on console. 
-The calculator wait at working until that `q` is typed on console.
+Created a Calculator model to save numbers which were typed in the console and perform an operation when a operator is typed. 
+The calculator will keep working until the letter "q" is typed.
 Lines are always splited to works with an operations in line.
-When typed is not a number, the calculator show a message to user, the same happen when the second number is 0, because it is not permitted.
-
+When the value typed is not a number, the calculator shows a message to the user, the same happens when the second number is 0, 
+because it is not permitted.
 ## Requirements
  - Ruby
  - RSpec
